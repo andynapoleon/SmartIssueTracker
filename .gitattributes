@@ -1,0 +1,27 @@
+# Mark TypeScript files as documentation/generated to exclude from language statistics
+*.ts linguist-documentation=true
+*.tsx linguist-documentation=true
+
+# Mark JavaScript files as documentation/generated to exclude from language statistics
+*.js linguist-documentation=true
+*.jsx linguist-documentation=true
+
+# Mark client-side code as vendored (alternative approach)
+client/** linguist-vendored=true
+
+# Mark Java files as the primary language
+*.java linguist-detectable=true
+
+# Properly detect TypeScript and JavaScript files but don't count them
+# *.ts linguist-detectable=true linguist-language=TypeScript
+# *.tsx linguist-detectable=true linguist-language=TypeScript
+# *.js linguist-detectable=true linguist-language=JavaScript
+# *.jsx linguist-detectable=true linguist-language=JavaScript
+
+# Treat JSON files as binary to exclude them from language statistics
+*.json binary
+
+# Common files to exclude from language statistics
+*.html linguist-documentation=true
+*.css linguist-documentation=true
+*.scss linguist-documentation=true 
