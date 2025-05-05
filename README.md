@@ -1,4 +1,4 @@
-# Smart Issue Tracker
+# 🧠 Smart Issue Tracker 💡
 
 A modern issue tracking system powered by AI that automatically classifies, prioritizes, and enriches tickets.
 
