@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.smartissuetracker.ai;
+
+option java_multiple_files = true;
+option java_package = "com.smartissuetracker.ai.proto";
+
+service AIService {
+  rpc AnalyzeIssue (AnalyzeIssueRequest) returns (AnalyzeIssueResponse);
+}
+
+message AnalyzeIssueRequest {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+}
+
+message AnalyzeIssueResponse {
+  string id = 1;
+  string category = 2;
+  string priority = 3;
+  string team = 4;
+  string summary = 5;
+  repeated string next_steps = 6;
+} 

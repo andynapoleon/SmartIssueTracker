@@ -1,0 +1,51 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.gradle/
+build/
+target/
+gradle/
+gradlew
+gradlew.bat
+.settings/
+.classpath
+.project
+
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+dist/
+.vite/
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE
+.idea/
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kubernetes
+kubeconfig
+
+# Misc
+*.log
+.tmp/
+log/
+logs/ 

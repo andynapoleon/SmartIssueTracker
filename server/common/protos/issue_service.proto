@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package com.smartissuetracker.issue;
+
+option java_multiple_files = true;
+option java_package = "com.smartissuetracker.issue.proto";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service IssueService {
+  rpc CreateIssue (CreateIssueRequest) returns (IssueResponse);
+  rpc GetIssue (GetIssueRequest) returns (IssueResponse);
+  rpc UpdateIssue (UpdateIssueRequest) returns (IssueResponse);
+  rpc DeleteIssue (DeleteIssueRequest) returns (google.protobuf.Empty);
+  rpc ListIssues (ListIssuesRequest) returns (ListIssuesResponse);
+  rpc EnrichIssue (EnrichIssueRequest) returns (google.protobuf.Empty);
+}
+
+message CreateIssueRequest {
+  string title = 1;
+  string description = 2;
+}
+
+message GetIssueRequest {
+  string id = 1;
+}
+
+message UpdateIssueRequest {
+  string id = 1;
+  optional string title = 2;
+  optional string description = 3;
+  optional string status = 4;
+  optional string category = 5;
+  optional string priority = 6;
+  optional string team = 7;
+}
+
+message DeleteIssueRequest {
+  string id = 1;
+}
+
+message ListIssuesRequest {
+  int32 page_size = 1;
+  int32 page_number = 2;
+  optional string status = 3;
+  optional string category = 4;
+  optional string priority = 5;
+  optional string team = 6;
+}
+
+message ListIssuesResponse {
+  repeated IssueResponse issues = 1;
+  int32 total_count = 2;
+}
+
+message EnrichIssueRequest {
+  string id = 1;
+  string category = 2;
+  string priority = 3;
+  string team = 4;
+  string summary = 5;
+  repeated string next_steps = 6;
+}
+
+message IssueResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string status = 4;
+  optional string category = 5;
+  optional string priority = 6;
+  optional string team = 7;
+  optional string summary = 8;
+  repeated string next_steps = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+} 
