@@ -20,8 +20,3 @@ client/** linguist-vendored=true
 
 # Treat JSON files as binary to exclude them from language statistics
 *.json binary
-
-# Common files to exclude from language statistics
-*.html linguist-documentation=true
-*.css linguist-documentation=true
-*.scss linguist-documentation=true 
